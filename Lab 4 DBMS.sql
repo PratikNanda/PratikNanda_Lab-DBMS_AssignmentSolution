@@ -123,7 +123,8 @@ SELECT COUNT(CUS_GENDER) FROM customer c inner join orders o on c.CUS_ID=o.CUS_I
 #4th
 
 select o.ORD_ID,o.ORD_AMOUNT,o.ORD_DATE,p.PRO_ID,p.PRO_NAME
- from orders o join product p on p.PRO_ID=o.PRO_ID
+ from orders o join product_details pd on o.PROD_ID=pd.PROD_ID
+ join product p on p.PRO_ID=pd.PRO_ID
  where o.CUS_ID =2; 
  
  #5th
